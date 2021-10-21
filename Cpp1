@@ -1,0 +1,29 @@
+// Code 1(Hello World)
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+    cout<<"Hello, World!";
+    return 0;
+}
+
+
+// Code 2(Input and Output)
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int a,b,c;
+    cin>>a >>b >>c;
+    cout<<a+b+c;
+    return 0;
+}
+
