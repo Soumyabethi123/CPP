@@ -1,0 +1,23 @@
+//Conditional Statements
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string A[9]={"one","two","three","four","five","six","seven","eight","nine"};
+
+int main(){
+    int n;
+    cin>>n;
+    
+    if (n<10){
+        cout<<A[n-1];
+        
+    }
+    
+    else{
+        cout<<"Greater than 9";
+    }
+    
+    return 0;
+}
