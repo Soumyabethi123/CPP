@@ -1,0 +1,55 @@
+//Class
+
+#include <iostream>
+#include <sstream>
+using namespace std;
+
+/*
+Enter code for class Student here.
+Read statement for specification.
+*/
+
+class student{
+
+     public :
+      int get(int);
+      void name1(string,string);
+      void name2(string,string);
+        
+    
+};
+
+int student::get(int a){
+    
+    return a;
+}
+
+void student::name1(string S,string P){
+    cout<<S<<","<<P;
+}
+
+void student::name2(string S,string P){
+    cout<<S<<", "<<P;
+}
+
+int main() {
+    
+    int age,std;
+    string first_name,last_name;
+    
+    cin>>age;
+    cin>>first_name;
+    cin>>last_name;
+    cin>>std;
+    
+    student obj;
+    cout<<obj.get(age)<<endl;
+    obj.name2(last_name,first_name);
+    cout<<"\n"<<obj.get(std);
+    
+    cout<<"\n"<<endl;
+    cout<<obj.get(age)<<",";
+    obj.name1(first_name,last_name);
+    cout<<","<<obj.get(std);
+    return 0;
+}
