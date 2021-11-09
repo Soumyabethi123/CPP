@@ -1,0 +1,69 @@
+//Vector-sort
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    
+    vector<int>v;
+    int size=v.size();
+    cin>>size;
+    
+    for(int i=0;i<size;i++){
+        int temp;
+        cin>>temp;
+        v.push_back(temp);
+    }
+    
+    sort(v.begin(),v.end());
+    
+    for(int i=0;i<size;i++){
+        cout<<v[i]<<"\t";
+    }
+    return 0;
+}
+
+
+
+//Vector-erase
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    
+    vector<int>v;
+    int size=v.size();
+    cin>>size;
+    
+    for(int i=0;i<size;i++){
+        int temp;
+        cin>>temp;
+        v.push_back(temp);
+    }
+    
+    int index,left,right;
+    cin>>index;
+    v.erase(v.begin()+(index-1)); 
+    
+    cin>>left>> right;
+    v.erase(v.begin()+(left-1),v.begin()+(right-1));
+    
+    cout<<size-(right-left+1)<<endl;
+    for(int j=0;j<(size-(right-left+1));j++){
+        cout<<v[j]<<'\t';
+    }
+    return 0;
+}
