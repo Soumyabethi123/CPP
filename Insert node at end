@@ -1,0 +1,67 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+class node{
+    private:
+    int data;
+    node*link;
+    node*head;
+    
+    public:
+        node(){
+           head=NULL;    
+        }
+    
+    node* Insert_end(int);
+
+    void display();
+};
+
+node* node::Insert_end(int val){
+    
+    node* newnode=new node();
+    newnode->data=val;
+    newnode->link=NULL;
+    node* ptr;
+    ptr=head;
+    
+    if(head==NULL){
+        head=newnode;
+    }
+    else{
+        
+        while(ptr->link!=NULL){
+            ptr=ptr->link;
+        }
+        ptr->link=newnode;
+    }
+    return newnode;
+}
+
+void node::display(){
+    
+    while(head != NULL){
+        cout<<head->data<<endl;
+        head=head->link;
+    }
+}
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    
+    node obj;
+    int n;
+    cin>>n;
+    
+    for(int i=0;i<n;i++){
+        int temp;
+        cin>>temp;
+        obj.Insert_end(temp);
+    }
+    obj.display();
+    return 0;
+}
