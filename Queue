@@ -1,0 +1,81 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+class Queue
+{
+    int front ,rear;
+    public: 
+        Queue()
+        {
+             front=rear=-1;
+        }
+
+    int enqueue(int[],int);
+    int dequeue(int[]);
+    void display(int[]);
+};
+
+int Queue::enqueue(int queue[],int item)
+{
+    if(front==-1)
+    {
+        front++;
+    }
+    rear++;
+    queue[rear]=item;
+    
+    return 0;
+}
+
+int Queue::dequeue(int queue[])
+{
+    int del;
+    del=queue[front];
+    
+    if(front == rear){
+        front=-1;
+        rear=-1;
+    }
+    
+    else{
+        front=(front+1);
+    }
+    
+    return del;
+}
+
+void Queue::display(int queue[]){
+    cout<<queue[front]<<endl;
+}
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    
+    int n;
+    cin>>n; 
+    Queue obj;
+    int queue[n];
+    for(int i=0;i<n;i++) {
+        int Query;
+        cin>>Query;
+        
+        if(Query==1){
+            int item;
+            cin>>item;
+            obj.enqueue(queue,item);
+        }
+        else if(Query==2){
+            obj.dequeue(queue);
+        }
+        else{
+            obj.display(queue);
+        }
+    
+    }  
+    return 0;
+}
